@@ -1,0 +1,6 @@
+Example Output
+Depending on the operating system you are running, the output might be:
+
+'win32' for Windows
+'linux' for Linux
+'darwin' for macOS
