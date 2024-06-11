@@ -1,21 +1,17 @@
-console.log("first task");
+const fs = require('fs');
 
-setTimeout(()=>{
-  console.log("who waits for me");
-},0);
+const getText = (path) =>{
+    return new Promise((resolve, reject)=>{
 
-console.log("second task");
-console.log("third task");
-console.log("fourth task");
-console.log("fifth task");
-console.log("second task");
-console.log("third task");
-setTimeout(()=>{
-    console.log("I dont wait");
-  },0);
-console.log("fourth task");
-console.log("fifth task");
-console.log("second task");
-console.log("third task");
-console.log("fourth task");
-console.log("fifth task");
+        fs.readFile('./content/text.txt', 'utf8', (err, data) =>{
+            if (err) {
+               reject(err);
+            } else {
+               resolve(data);
+            }
+        });
+    })
+}
+
+
+getTex('./content/text.txt').then(result =>console.log(result))
