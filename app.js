@@ -1,8 +1,21 @@
-const os = require ('os');
-const fs = require('fs');
-const http = require('http');
+console.log("first task");
 
-console.log(os.hostname());
-const time = os.uptime();
+setTimeout(()=>{
+  console.log("who waits for me");
+},0);
 
-console.log(os.uptime()/ 60);
+console.log("second task");
+console.log("third task");
+console.log("fourth task");
+console.log("fifth task");
+console.log("second task");
+console.log("third task");
+setTimeout(()=>{
+    console.log("I dont wait");
+  },0);
+console.log("fourth task");
+console.log("fifth task");
+console.log("second task");
+console.log("third task");
+console.log("fourth task");
+console.log("fifth task");
