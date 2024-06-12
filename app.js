@@ -2,7 +2,6 @@ const fs = require('fs');
 
 const getText = (path) =>{
     return new Promise((resolve, reject)=>{
-
         fs.readFile('./content/text.txt', 'utf8', (err, data) =>{
             if (err) {
                reject(err);
@@ -14,4 +13,6 @@ const getText = (path) =>{
 }
 
 
-getTex('./content/text.txt').then(result =>console.log(result))
+getText('./content/text.txt')
+.then(result =>console.log(result))
+.catch(err=> console.log(err))
