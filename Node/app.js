@@ -1,10 +1,28 @@
 const express = require('express')
 const path = require ('path')
+const {products}= require ('../node-express-course/02-express-tutorial/data')
+
 
 const app = express()
 const PORT = 5000;
 
-app.use(express.static(path.resolve('../node-express-course/02-express-tutorial/navbar-app')))
+app.get('/api/AllProducts', (req, res)=>{
+    const simplyproducts = products.map(product =>({
+        id : product.id,
+        name: product.name,
+        image: product.image,
+        description: product.desc
+    }))  
+    res.json(simplyproducts)
+})
+
+//get product by id
+app.get('/api/singleProduct', (req,res) =>{
+        const singleProducts
+});
+
+
+
 
 
 app.get('*',(req, res)=>{
