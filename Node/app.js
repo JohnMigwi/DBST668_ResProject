@@ -17,9 +17,24 @@ app.get('/api/AllProducts', (req, res)=>{
 })
 
 //get product by id
-app.get('/api/singleProduct', (req,res) =>{
-        const singleProducts
+app.get('/api/singleProduct/:id', (req,res) =>{
+        const productID = parseInt(req.params.id)
+        const singleProduct = products.find(product=> product.id === productID)
+        res.json(singleProduct)
 });
+
+
+app.post('/api/product', (req, res) =>{
+    const newProduct = {
+        id: products.id +1,
+        name: req.body.name,
+        image: req.body.image,
+        price: req.body.price,
+        desc: req.body.desc
+    }
+    products.push(newProduct);
+    res.json(newProduct)
+})
 
 
 
